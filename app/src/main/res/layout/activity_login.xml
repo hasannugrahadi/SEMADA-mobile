@@ -100,6 +100,7 @@
                     android:id="@+id/teks_nisn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:paddingStart="2dp"
                     android:layout_marginStart="35dp"
                     android:background="@android:color/transparent"
                     android:hint="Nisn" />
@@ -139,13 +140,28 @@
                     android:layout_marginBottom="14dp"
                     android:src="@drawable/icon_password" />
 
-                <EditText
-                    android:id="@+id/teks_password"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/passwordTextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="35dp"
-                    android:background="@android:color/transparent"
-                    android:hint="Password" />
+                    app:passwordToggleEnabled="true"
+                    app:boxBackgroundMode="none"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/teks_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:paddingStart="2dp"
+                        android:paddingTop="@dimen/activity_vertical_margin"
+                        android:gravity="start"
+                        android:hint="Password"
+                        android:inputType="textPassword" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
 
             </RelativeLayout>
 
