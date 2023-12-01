@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "727475997336",
+    "project_id": "semada-48ad2",
+    "storage_bucket": "semada-48ad2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727475997336:android:4056c8257c76a22587deed",
+        "android_client_info": {
+          "package_name": "com.app.semada"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA50YNGTWFpivYcB-KednPFFjREUjSQ3vc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

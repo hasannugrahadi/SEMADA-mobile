@@ -7,30 +7,32 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.app.semada.ui.login.LoginActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splashscreen)
+        setContentView(R.layout.splash_screen)
 
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
 
+        supportActionBar?.hide()
+
         val preferenceDataStore = DataStore(this)
-        val isLoggedIn = preferenceDataStore.getValue()
+        val isLoggedIn = preferenceDataStore.getLoggedData()
+        val nis = preferenceDataStore.getNIS()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            if (isLoggedIn == true) {
-                // User is already logged in, direct to the main activity
+            if (nis != null) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
-                // User is not logged in, direct to the motion page
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()

@@ -2,31 +2,78 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app_icon_semada"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/app_icon_semada"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.SEMADA"
         tools:targetApi="31">
         <activity
-            android:name=".login.login"
-            android:screenOrientation="portrait"
-            android:exported="false" />
-        <activity
-            android:name=".splash_screen.SplashScreen"
+            android:name=".SplashScreen"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+        <service
+            android:name=".ApiService"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.pelanggaran.PelanggaranActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.ijin.IjinActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.presensi.PresensiActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.presensi.SendingActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.rekap.RekapActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.riwayat.RiwayatActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.sakit.SakitActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.profile.UbahPassActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.profile.TentangActivity"
+            android:screenOrientation="portrait"/>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>

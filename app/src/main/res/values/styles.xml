@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ButtonEnabledStyle">
+        <item name="android:background">@drawable/bg_btn_kirim</item>
+        <item name="android:textColor">@android:color/white</item>
+        <!-- Add other attributes as needed -->
+    </style>
+
+    <!-- Style for disabled state -->
+    <style name="ButtonDisabledStyle">
+        <item name="android:background">@drawable/bg_btn_kirim_na</item>
+        <item name="android:textColor">@color/grey_text</item>
+        <!-- Add other attributes as needed -->
+    </style>
+</resources>

@@ -1,0 +1,10 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#C61C1C" /> <!-- Warna latar belakang -->
+    <size
+        android:width="180dp"
+        android:height="180dp" /> <!-- Ukuran lebar dan tinggi -->
+    <corners android:radius="90dp" /> <!-- Radius sudut, setengah dari ukuran lebar atau tinggi -->
+
+    <!-- Mengganti dengan lingkaran -->
+    <shape android:shape="oval" />
+</shape>

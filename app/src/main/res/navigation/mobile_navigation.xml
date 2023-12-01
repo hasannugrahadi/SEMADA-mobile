@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
-
-    <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.app.semada.ui.presensi.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@+id/navigation_dashboard">
 
     <fragment
         android:id="@+id/navigation_dashboard"
         android:name="com.app.semada.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
+        android:label="Home"
         tools:layout="@layout/fragment_dashboard" />
 
+    <activity
+        android:id="@+id/navigation_presensi"
+        android:name="com.app.semada.ui.presensi.PresensiActivity"
+        android:label="Presensi"
+        tools:layout="@layout/activity_presensi" />
+
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.app.semada.ui.profile.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:id="@+id/navigation_profile"
+        android:name="com.app.semada.ui.profile.ProfileFragment"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 </navigation>

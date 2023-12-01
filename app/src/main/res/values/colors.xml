@@ -8,4 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="green_theme">#1CC642</color>
+    <color name="green_frag_bg">#EAFFEF</color>
+    <color name="red_theme">#C61C1C</color>
+    <color name="grey_text">#C8C8C8</color>
+    <color name="jam_masuk">#1C4BC6</color>
+    <color name="jam_keluar">#C6631C</color>
+
+
 </resources>

@@ -5,4 +5,10 @@
     <string name="title_notifications">Notifications</string>
     <string name="teks_login">Silahkan masukkan NIS dan Password anda</string>
     <string name="teks_bar_login">Copyright © SMA Negeri 2 Jember</string>
+    <string name="presensi_warn">Pihak Sekolah Bisa\nMerubah Status Presensi\nKamu Apabila Presensi\nTidak Sesuai\ndengan Ketentuan</string>
+    <string name="teks_max_pdf">Upload File Foto dalam format Gambar\nTekan disini</string>
+    <string name="teks_rentang_hari">Jika lebih dari Tiga Hari, diharap menghubungi pihak administrasi</string>
+    <string name="teks_pihak_sekolah">Pihak sekolah berhak memberi hukuman\njika ada pemalsuan dari pengisian form diatas</string>
+    <string name="teks_surat_yg_upload">Surat yang di upload merupakan surat keterangan dokter</string>
+    <string name="teks_tentang_aplikasi">Aplikasi ini adalah aplikasi E-learning untuk SMA Negeri 2 Jember. Kami berharap dengan dibuatnya aplikasi ini, siswa dibuat jadi lebih mudah dalam melakukan kegiatan dalam dunia sekolah.\n \nUntuk saat ini aplikasi ini hanya dapat mengelola absensi. Nantikan fitur-fitur baru selanjutnya!</string>
 </resources>
