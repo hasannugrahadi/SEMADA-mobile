@@ -35,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLogin.setOnClickListener {
             val nis = binding.teksNis.text.toString()
             val password = binding.teksPassword.text.toString()
+            if(nis.isNotEmpty() && password.isNotEmpty()) {
                 val stringRequest = object : StringRequest(
                     Method.POST,
                     serverUrl,
@@ -42,7 +43,6 @@ class LoginActivity : AppCompatActivity() {
                         val jsonResponse = JSONObject(response)
                         when (jsonResponse.getString("status")) {
                             "success" -> {
-                                // Login successful
                                 Toast.makeText(
                                     this,
                                     jsonResponse.getString("message"),
@@ -68,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
                             }
                         }
                     },
-                    Response.ErrorListener {error->
+                    Response.ErrorListener { error ->
                         Toast.makeText(this, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
                     }
                 ) {
@@ -79,8 +79,10 @@ class LoginActivity : AppCompatActivity() {
                         return params
                     }
                 }
-                // Add the request to the RequestQueue
                 Volley.newRequestQueue(this).add(stringRequest)
+            } else {
+                Toast.makeText(this, "Semua kolom harus terisi", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

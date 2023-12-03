@@ -37,33 +37,38 @@ class UbahPassActivity : AppCompatActivity() {
             val nis = preferenceDataStore.getNIS()
             val oldpass = binding.ubahpassPasslama.text.toString()
             val newpass = binding.ubahpassPassbaru.text.toString()
-
-            val stringRequest = object : StringRequest(
-                Request.Method.POST, url,
-                Response.Listener { response ->
-                    Log.d("Response", response)
-                    Toast.makeText(
-                        this,
-                        "Password berhasil diubah",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    val intent = Intent(this@UbahPassActivity, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                },
-                Response.ErrorListener { error ->
-                    Log.e("Error", "Error occurred: $error")
-                }) {
-                override fun getParams(): MutableMap<String, String> {
-                    val params = HashMap<String, String>()
-                    params["userID"] = nis!!
-                    params["oldPassword"] = oldpass
-                    params["newPassword"] = newpass
-                    return params
+            if (newpass.length >= 6) {
+                val stringRequest = object : StringRequest(
+                    Request.Method.POST, url,
+                    Response.Listener { response ->
+                        Log.d("Response", response)
+                        Toast.makeText(
+                            this,
+                            "Password berhasil diubah",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        val intent = Intent(this@UbahPassActivity, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    },
+                    Response.ErrorListener { error ->
+                        Log.e("Error", "Error occurred: $error")
+                    }) {
+                    override fun getParams(): MutableMap<String, String> {
+                        val params = HashMap<String, String>()
+                        params["userID"] = nis!!
+                        params["oldPassword"] = oldpass
+                        params["newPassword"] = newpass
+                        return params
+                    }
                 }
+                Volley.newRequestQueue(this).add(stringRequest)
+            } else {
+                Toast.makeText(
+                    this,
+                    "Password harus mempunyai 6 karakter atau lebih",
+                    Toast.LENGTH_SHORT).show()
             }
-
-            Volley.newRequestQueue(this).add(stringRequest)
         }
     }
 }
